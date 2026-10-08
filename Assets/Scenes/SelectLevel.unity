@@ -2056,6 +2056,7 @@ GameObject:
   - component: {fileID: 1878959334}
   - component: {fileID: 1878959333}
   - component: {fileID: 1878959337}
+  - component: {fileID: 1878959338}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -2165,6 +2166,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a09a94aa4da8b9d4cb51b60b72144d61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+--- !u!114 &1878959338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1878959332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96916e8dbda68c64b9bf7a3fbf4862c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
 --- !u!1 &1996352603
 GameObject:
   m_ObjectHideFlags: 0
