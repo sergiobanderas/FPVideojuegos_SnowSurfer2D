@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     float totalRotation; // Store the total rotation of the player
     int flipCount; // Store the number of flips performed by the player
 
+    int activePowerUpsCount; // Track the number of active power-ups
 
     
     private bool canControlPlayer = true; // Flag to control player input
@@ -120,5 +121,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void ApplyPowerUp(PowerUpScriptableObject powerUpData)
+    {
+        activePowerUpsCount++; // Increment the count of active power-ups
+        if (powerUpData.PowerUpType == "Speed")
+        {
+            baseSpeed += powerUpData.PowerUpValue; // Increase the base speed by the power-up value
+            bootsSpeed += powerUpData.PowerUpValue; // Increase the boots speed by the power-up value
+        }
+    }
 
+    public void DeactivatePowerUp(PowerUpScriptableObject powerUpData)
+    {
+        activePowerUpsCount--; // Decrement the count of active power-ups
+        if (activePowerUpsCount == 0)
+        {
+            if (powerUpData.PowerUpType == "Speed")
+            {
+                baseSpeed -= powerUpData.PowerUpValue; // Decrease the base speed by the power-up value
+                bootsSpeed -= powerUpData.PowerUpValue; // Decrease the boots speed by the power-up value
+            }
+        }
+    }
 }
